@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager</title>
+</head>
+<body>
+    <h1>Benvingut!</h1>
+    <button id="logoutBtn">Tancar Sessió</button>
+
+    <script>
+        const usuariActual = localStorage.getItem("usuariActual");
+        if (!usuariActual) {
+           
+            window.location.href = "login.html";
+        }
+
+        const logoutBtn = document.getElementById("logoutBtn");
+        logoutBtn?.addEventListener("click", () => {
+            localStorage.removeItem("usuariActual"); // Cierra sesión
+            window.location.href = "login.html";     // Redirige a login
+        });
+    </script>
+</body>
+</html>

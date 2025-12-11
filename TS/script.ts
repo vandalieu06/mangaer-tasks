@@ -1,7 +1,7 @@
 interface tarea {
     titulo: string;
     descripcion?: string;
-    estado: boolean;
+    estado: number;
     fecha?: Date;
     prioridad: number;
     etiquetas: string[]
@@ -29,6 +29,7 @@ window.onload = function () {
 function crearTarea(
     titulo: string,
     descripcion?: string,
+    estado: number = 1,
     fecha?: Date,
     prioridad: number = 1,
     etiquetas: string[] = [] 
@@ -39,7 +40,7 @@ function crearTarea(
     const novaTarea: tarea = {
         titulo,
         descripcion,
-        estado: false,
+        estado,
         fecha,
         prioridad,
         etiquetas
@@ -82,7 +83,7 @@ function actualizarTarea(
     titulo: string,
     nuevoTitulo?: string,
     descripcion?: string,
-    estado?: boolean,
+    estado?: number,
     fecha?: Date,
     prioridad?: number,
     etiquetas?: string[]

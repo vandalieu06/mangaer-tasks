@@ -207,7 +207,7 @@ Desarrollado para **Jaume Viladoms Centre Educatiu**
 
 - [Repositorio GitHub](https://github.com/vandalieu06/mangaer-tasks)
 - [Reportar un Bug](https://github.com/vandalieu06/mangaer-tasks/issues)
-- [Diseño en Figma](https://www.figma.com/design/zAulmgBMEDtZdLUihnyfiM/TaskGener)
+- [Diseño en Figma](https://www.figma.com/proto/zAulmgBMEDtZdLUihnyfiM/TaskGener?page-id=9%3A55&node-id=20-2&viewport=821%2C638%2C0.35&t=Y3VAjIpA45LN7fgH-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=20%3A2)
 
 ---
 

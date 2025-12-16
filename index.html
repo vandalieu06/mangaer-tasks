@@ -4,7 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
+			content="<!--"
+			Estadísticas
+			-- />
+		<div class="flex flex-col gap-4">
+			<div class="bg-neutral-light rounded p-4">
+				<p class="text-neutral-dark text-base font-normal mb-2">
+					Tareas totales
+				</p>
+				<p class="text-primary-dark text-base font-normal">24</p>
+			</div>
+
+			<div class="bg-neutral-light rounded p-4">
+				<p class="text-neutral-dark text-base font-normal mb-2">Completadas</p>
+				<p class="text-primary-dark text-base font-normal">12</p>
+			</div>
+		</div>
+		e-width, initial-scale=1.0" />
 		<title>TaskGener - Dashboard</title>
 
 		<!-- Tailwind CSS -->
@@ -80,20 +96,22 @@
 				<nav class="flex flex-col gap-2">
 					<!-- Dashboard -->
 					<label
-						class="bg-white border border-gray-400 rounded p-3 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
+						class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
 						<input
 							type="checkbox"
-							class="w-4 h-4 border-2 border-gray-600 rounded-sm cursor-pointer accent-primary" />
-						<span class="text-neutral-dark text-sm font-normal">Dashboard</span>
+							class="w-[16px] h-[16px] border-2 border-gray-600 rounded-sm cursor-pointer accent-primary" />
+						<span class="text-neutral-dark text-base font-normal"
+							>Dashboard</span
+						>
 					</label>
 
 					<!-- Todas las tareas -->
 					<label
-						class="bg-white border border-gray-400 rounded p-3 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
+						class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
 						<input
 							type="checkbox"
-							class="w-4 h-4 border-2 border-gray-600 rounded-sm cursor-pointer accent-primary" />
-						<span class="text-neutral-dark text-sm font-normal"
+							class="w-[16px] h-[16px] border-2 border-gray-600 rounded-sm cursor-pointer accent-primary" />
+						<span class="text-neutral-dark text-base font-normal"
 							>Todas las tareas</span
 						>
 					</label>
@@ -101,14 +119,13 @@
 					<!-- Crear tarea -->
 					<label
 						onclick="abrirModal()"
-						class="bg-white border border-gray-400 rounded p-3 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
+						class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors">
 						<i class="fas fa-plus text-primary text-base"></i>
-						<span class="text-neutral-dark text-sm font-normal"
+						<span class="text-neutral-dark text-base font-normal"
 							>Crear tarea</span
 						>
 					</label>
 				</nav>
-
 				<!-- Separador -->
 				<div class="border-t border-gray-300 my-2"></div>
 

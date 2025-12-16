@@ -9,11 +9,11 @@ interface tarea {
 
 (window as any).abrirModal = abrirModal;
 
-window.onload = function () {
+window.onload = () => {
 	const usuariActual = localStorage.getItem("usuariActual");
 
 	if (!usuariActual) {
-		window.location.href = "login.html";
+		window.location.href = "./pages/login.html";
 	}
 
 	const tasques = (
@@ -116,7 +116,7 @@ function abrirModal() {
 			1,
 			fechaTarea,
 			Number(prioridadInput.value),
-			etiquetasTarea
+			etiquetasTarea,
 		);
 
 		document.body.removeChild(overlay);
@@ -151,7 +151,7 @@ function crearTarea(
 	estado: number = 1,
 	fecha?: Date,
 	prioridad: number = 1,
-	etiquetas: string[] = []
+	etiquetas: string[] = [],
 ) {
 	const tasquesRaw = localStorage.getItem("tasques");
 	let tasques: tarea[] = [];
@@ -209,7 +209,7 @@ function actualizarTarea(
 	estado?: number,
 	fecha?: Date,
 	prioridad?: number,
-	etiquetas?: string[]
+	etiquetas?: string[],
 ) {
 	const tasquesRaw = localStorage.getItem("tasques");
 	let tasques: tarea[] = [];

@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = () => {
 	const usuariActual = localStorage.getItem("usuariActual");
 	if (usuariActual) {
 		window.location.href = "index.html";
@@ -6,13 +6,14 @@ window.onload = function () {
 };
 
 function validarUsuario() {
-	let user = (document.getElementById("username") as HTMLInputElement).value;
-	let password = (document.getElementById("password") as HTMLInputElement)
+	const user = (document.getElementById("username") as HTMLInputElement).value;
+	const password = (document.getElementById("password") as HTMLInputElement)
 		.value;
-	let error = document.getElementById("error");
+	
+	const error = document.getElementById("error");
 
 	const usuarisGuardats = JSON.parse(
-		localStorage.getItem("usuarisRegistrats") || "[]"
+		localStorage.getItem("usuarisRegistrats") || "[]",
 	) as Usuari[];
 
 	if (usuarisGuardats.length === 0) {
@@ -21,7 +22,7 @@ function validarUsuario() {
 	}
 
 	const usuariTrobat = usuarisGuardats.find(
-		(u) => (u.username === user || u.email === user) && u.password === password
+		(u) => (u.username === user || u.email === user) && u.password === password,
 	);
 
 	if (usuariTrobat) {
@@ -32,3 +33,5 @@ function validarUsuario() {
 		if (error) error.innerHTML = "Usuari o contrasenya incorrectes.";
 	}
 }
+const btnValidate = document.querySelector(".btn-validate");
+btnValidate?.addEventListener("click", validarUsuario);

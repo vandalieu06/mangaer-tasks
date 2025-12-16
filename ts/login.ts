@@ -6,10 +6,11 @@ window.onload = () => {
 };
 
 function validarUsuario() {
+	console.log("Click en login");
 	const user = (document.getElementById("username") as HTMLInputElement).value;
 	const password = (document.getElementById("password") as HTMLInputElement)
 		.value;
-	
+
 	const error = document.getElementById("error");
 
 	const usuarisGuardats = JSON.parse(
@@ -28,7 +29,7 @@ function validarUsuario() {
 	if (usuariTrobat) {
 		localStorage.setItem("usuariActual", JSON.stringify(usuariTrobat));
 
-		window.location.href = "index.html";
+		window.location.href = "/";
 	} else {
 		if (error) error.innerHTML = "Usuari o contrasenya incorrectes.";
 	}

@@ -6,6 +6,7 @@ window.onload = () => {
     }
 };
 function validarUsuario() {
+    console.log("Click en login");
     const user = document.getElementById("username").value;
     const password = document.getElementById("password")
         .value;
@@ -19,7 +20,7 @@ function validarUsuario() {
     const usuariTrobat = usuarisGuardats.find((u) => (u.username === user || u.email === user) && u.password === password);
     if (usuariTrobat) {
         localStorage.setItem("usuariActual", JSON.stringify(usuariTrobat));
-        window.location.href = "index.html";
+        window.location.href = "/";
     }
     else {
         if (error)

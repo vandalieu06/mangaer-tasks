@@ -6,27 +6,29 @@ interface Usuari {
 	password: string;
 }
 
-window.onload = function () {
+window.onload = () => {
 	const usuariActual = localStorage.getItem("usuariActual");
 	if (usuariActual) {
 		window.location.href = "index.html";
 	}
+	console.log("hola mundo");
 };
 
 function crearUsuario() {
-	let nombre = (document.getElementById("nombre") as HTMLInputElement).value;
-	let apellidos = (document.getElementById("apellidos") as HTMLInputElement)
+	console.log("Crear Usuario");
+	const nombre = (document.getElementById("nombre") as HTMLInputElement).value;
+	const apellidos = (document.getElementById("apellidos") as HTMLInputElement)
 		.value;
-	let email = (document.getElementById("email") as HTMLInputElement).value;
-	let username = (document.getElementById("username") as HTMLInputElement)
+	const email = (document.getElementById("email") as HTMLInputElement).value;
+	const username = (document.getElementById("username") as HTMLInputElement)
 		.value;
-	let password = (document.getElementById("password") as HTMLInputElement)
+	const password = (document.getElementById("password") as HTMLInputElement)
 		.value;
 
-	let error = document.getElementById("error");
-	let creado = document.getElementById("cuentaCreada");
+	const error = document.getElementById("error");
+	const creado = document.getElementById("cuentaCreada");
 
-	let errors: string[] = [];
+	const errors: string[] = [];
 
 	if (!nombre) errors.push("El camp 'Nom' és obligatori.");
 	if (!apellidos) errors.push("El camp 'Cognoms' és obligatori.");
@@ -41,7 +43,7 @@ function crearUsuario() {
 		errors.push("La contrasenya ha de tenir almenys 6 caràcters.");
 
 	const usuarisGuardats = JSON.parse(
-		localStorage.getItem("usuarisRegistrats") || "[]"
+		localStorage.getItem("usuarisRegistrats") || "[]",
 	) as Usuari[];
 
 	const emailExisteix = usuarisGuardats.some((u) => u.email === email);
@@ -76,3 +78,6 @@ function crearUsuario() {
             </button>`;
 	}
 }
+
+const btnCreateUser = document.querySelector(".btn-create-user");
+btnCreateUser?.addEventListener("click", crearUsuario);

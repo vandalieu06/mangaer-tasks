@@ -1,22 +1,24 @@
 "use strict";
-window.onload = function () {
+window.onload = () => {
     const usuariActual = localStorage.getItem("usuariActual");
     if (usuariActual) {
         window.location.href = "index.html";
     }
+    console.log("hola mundo");
 };
 function crearUsuario() {
-    let nombre = document.getElementById("nombre").value;
-    let apellidos = document.getElementById("apellidos")
+    console.log("Crear Usuario");
+    const nombre = document.getElementById("nombre").value;
+    const apellidos = document.getElementById("apellidos")
         .value;
-    let email = document.getElementById("email").value;
-    let username = document.getElementById("username")
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username")
         .value;
-    let password = document.getElementById("password")
+    const password = document.getElementById("password")
         .value;
-    let error = document.getElementById("error");
-    let creado = document.getElementById("cuentaCreada");
-    let errors = [];
+    const error = document.getElementById("error");
+    const creado = document.getElementById("cuentaCreada");
+    const errors = [];
     if (!nombre)
         errors.push("El camp 'Nom' és obligatori.");
     if (!apellidos)
@@ -62,3 +64,5 @@ function crearUsuario() {
             </button>`;
     }
 }
+const btnCreateUser = document.querySelector(".btn-create-user");
+btnCreateUser === null || btnCreateUser === void 0 ? void 0 : btnCreateUser.addEventListener("click", crearUsuario);

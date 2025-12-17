@@ -80,7 +80,10 @@ function actualizarTarea(titulo, nuevoTitulo, descripcion, estado, fecha, priori
     console.log("Tarea actualizada:", tasques[index]);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 4d4b20f (update)
 // Agergar Tarea
 const btnCreateTask = document.querySelector(".btn-create-task");
 btnCreateTask === null || btnCreateTask === void 0 ? void 0 : btnCreateTask.addEventListener("click", () => {
@@ -134,6 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 */
+<<<<<<< HEAD
+>>>>>>> 4d4b20f (update)
+=======
 >>>>>>> 4d4b20f (update)
 function tancarSesio() {
     localStorage.removeItem("usuariActual");

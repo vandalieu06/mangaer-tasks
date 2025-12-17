@@ -130,8 +130,58 @@ btnCreateTask?.addEventListener("click", () => {
 	).value;
 	const tags = (document.querySelector(".form-tags") as HTMLInputElement).value;
 	const date = (document.querySelector(".form-date") as HTMLInputElement).value;
+<<<<<<< HEAD
 });
 
+=======
+});
+
+const divBtns = document.querySelector(".div-btns");
+divBtns?.addEventListener("click", (e) => {
+	if (e.target && e.target.tagName === "BUTTON") {
+		const btn = e.target as HTMLButtonElement;
+		const text = btn.textContent;
+		alert(text.trim());
+	}
+});
+
+/*
+document.addEventListener("DOMContentLoaded", () => {
+  const chkDashboard = document.getElementById("chkDashboard");
+  const chkTodas = document.getElementById("chkTodas");
+  const mainContent = document.getElementById("mainContent");
+
+  // Guardamos el HTML original del dashboard
+  const dashboardHTML = mainContent.innerHTML;
+
+  chkDashboard.checked = true;
+
+  chkDashboard.addEventListener("change", () => {
+    if (chkDashboard.checked) {
+      chkTodas.checked = false;
+      mainContent.innerHTML = dashboardHTML;
+    }
+  });
+
+  chkTodas.addEventListener("change", () => {
+    if (chkTodas.checked) {
+      chkDashboard.checked = false;
+
+      fetch("./pages/todasLasTareas.html")
+        .then((res) => res.text())
+        .then((html) => {
+          mainContent.innerHTML = html;
+        })
+        .catch((err) => {
+          mainContent.innerHTML =
+            "<p class='text-red-500'>Error cargando las tareas</p>";
+          console.error(err);
+        });
+    }
+  });
+});
+*/
+>>>>>>> 4d4b20f (update)
 function tancarSesio() {
 	localStorage.removeItem("usuariActual");
 	window.location.href = "./pages/login.html";

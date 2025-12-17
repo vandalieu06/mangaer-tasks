@@ -1,26 +1,28 @@
 interface Tarea {
 	titulo: string;
 	descripcion?: string;
+	categoria: string;
 	estado: number;
 	fecha?: Date;
 	prioridad: number;
 	etiquetas: string[];
 }
-
-function abrirModal() {
-	console.log("Abriendo Nueva Tarea");
-}
+let tasques: Tarea[] = [];
 
 function crearTarea(
 	titulo: string,
 	descripcion?: string,
+	categoria: string,
 	estado: number = 1,
 	fecha?: Date,
 	prioridad: number = 1,
 	etiquetas: string[] = [],
 ) {
-	const tasquesRaw = localStorage.getItem("tasques");
-	let tasques: Tarea[] = [];
+	const tasquesRaw = JSON.parse(localStorage.getItem("tasques") | []);
+	if (tasquesRaw.length > 1) {
+		tasques = tasquesRaw;
+	}
+
 	if (tasquesRaw) {
 		tasques = JSON.parse(tasquesRaw) as Tarea[];
 	}
@@ -28,6 +30,7 @@ function crearTarea(
 	const novaTarea: Tarea = {
 		titulo,
 		descripcion,
+		categoria,
 		estado,
 		fecha,
 		prioridad,
@@ -35,10 +38,7 @@ function crearTarea(
 	};
 
 	tasques.push(novaTarea);
-
 	localStorage.setItem("tasques", JSON.stringify(tasques));
-
-	console.log("Tarea creada:", novaTarea);
 }
 
 function eliminarTarea(titulo: string) {
@@ -120,6 +120,17 @@ function actualizarTarea(
 	console.log("Tarea actualizada:", tasques[index]);
 }
 
+// Agergar Tarea
+const btnCreateTask = document.querySelector(".btn-create-task");
+btnCreateTask?.addEventListener("click", () => {
+	console.log("Tarea Creada");
+	const name = (document.querySelector(".form-name") as HTMLInputElement).value;
+	const description = (
+		document.querySelector(".form-description") as HTMLInputElement
+	).value;
+	const tags = (document.querySelector(".form-tags") as HTMLInputElement).value;
+	const date = (document.querySelector(".form-date") as HTMLInputElement).value;
+});
 
 function tancarSesio() {
 	localStorage.removeItem("usuariActual");

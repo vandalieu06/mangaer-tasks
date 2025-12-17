@@ -168,7 +168,7 @@
             <input
               type="text"
               placeholder="Nombre"
-              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary"
+              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary form-name"
             />
           </div>
 
@@ -179,7 +179,7 @@
             >
             <textarea
               placeholder="Describe la tarea aquí...."
-              class="bg-neutral-light border border-primary-dark rounded-lg h-[231px] p-4 text-neutral-medium text-base font-extrabold placeholder-neutral-medium resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+              class="bg-neutral-light border border-primary-dark rounded-lg h-[231px] p-4 text-neutral-medium text-base font-extrabold placeholder-neutral-medium resize-none focus:outline-none focus:ring-2 focus:ring-primary form-description"
             ></textarea>
           </div>
 
@@ -190,7 +190,7 @@
                 Categoria
               </h3>
             </div>
-            <div class="grid grid-cols-5 gap-4 w-full">
+            <div class="grid grid-cols-5 gap-4 w-full div-btns">
               <button
                 type="button"
                 class="bg-neutral-light border-2 border-primary rounded h-[124px] p-4 text-primary-dark text-base font-semibold flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
@@ -259,7 +259,7 @@
             <input
               type="text"
               placeholder="Con la coma separas las categorias"
-              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary"
+              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary form-tags"
             />
           </div>
 
@@ -271,25 +271,26 @@
             <input
               type="text"
               placeholder="dd/mm/yyyy"
-              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary"
+              class="bg-neutral-light border border-primary-dark rounded-lg h-[66px] px-4 py-2 text-neutral-medium text-base font-extrabold placeholder-neutral-medium focus:outline-none focus:ring-2 focus:ring-primary form-date"
             />
           </div>
 
           <!-- Botones de acción -->
           <div class="flex gap-4 items-center mt-4">
             <button
-              type="submit"
-              class="bg-primary px-4 py-2 rounded text-neutral-light text-2xl font-semibold hover:bg-primary-dark transition-colors"
+              type="button"
+              class="bg-primary px-4 py-2 rounded text-neutral-light text-2xl font-semibold hover:bg-primary-dark transition-colors btn-create-task"
             >
               Crear nueva tarea
             </button>
-            <button
-              type="button"
+
+            <a
+              href="/"
               class="border-2 border-primary px-4 py-2 rounded text-primary-dark text-2xl font-semibold hover:bg-primary hover:text-white transition-colors"
-              onclick="window.history.back()"
+              type="button"
             >
               Cancelar
-            </button>
+            </a>
           </div>
         </form>
       </main>

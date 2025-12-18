@@ -76,30 +76,28 @@
         <!-- Navegación -->
         <nav class="flex flex-col gap-2">
           <!-- Dashboard -->
-          <label
-            class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors"
-          >
-            <input
-              type="checkbox"
-              class="w-[16px] h-[16px] border-2 border-gray-600 rounded-sm cursor-pointer accent-primary"
-            />
-            <span class="text-neutral-dark text-base font-normal"
-              >Dashboard</span
+          <a href="/index.html" class="block">
+            <label
+              class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors"
             >
-          </label>
+              <i class="fas fa-home text-primary text-base"></i>
+              <span class="text-neutral-dark text-base font-normal"
+                >Dashboard</span
+              >
+            </label>
+          </a>
 
           <!-- Todas las tareas -->
-          <label
-            class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors"
-          >
-            <input
-              type="checkbox"
-              class="w-[16px] h-[16px] border-2 border-gray-600 rounded-sm cursor-pointer accent-primary"
-            />
-            <span class="text-neutral-dark text-base font-normal"
-              >Todas las tareas</span
+          <a href="./pages/todasLasTareas.html" class="block">
+            <label
+              class="bg-neutral-light border border-neutral-dark rounded p-4 flex items-center gap-3 w-full cursor-pointer hover:bg-gray-50 transition-colors"
             >
-          </label>
+              <i class="fas fa-folder text-primary text-base"></i>
+              <span class="text-neutral-dark text-base font-normal"
+                >Todas las Tareas</span
+              >
+            </label>
+          </a>
 
           <!-- Crear tarea -->
           <a href="./pages/crearTarea.html" class="block">

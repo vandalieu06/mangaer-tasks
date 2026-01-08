@@ -354,6 +354,43 @@ function tancarSesio() {
     localStorage.removeItem("usuariActual");
     window.location.href = "./pages/login.html";
 }
+function inicializarMenuEstado() {
+    document.addEventListener("click", (e) => {
+        const target = e.target;
+        // Click en el botón de estado
+        const btnEstado = target.closest(".btn-cambiar-estado");
+        if (btnEstado) {
+            e.stopPropagation();
+            // Cerrar otros menús abiertos
+            document.querySelectorAll(".menu-estado").forEach((menu) => {
+                menu.classList.add("hidden");
+            });
+            const menu = btnEstado.nextElementSibling;
+            menu === null || menu === void 0 ? void 0 : menu.classList.toggle("hidden");
+            return;
+        }
+        // Click fuera → cerrar todos
+        document.querySelectorAll(".menu-estado").forEach((menu) => {
+            menu.classList.add("hidden");
+        });
+    });
+}
+function inicializarCambioEstado() {
+    document.addEventListener("click", (e) => {
+        const target = e.target;
+        const btnSeleccion = target.closest("[data-estado]");
+        if (!btnSeleccion)
+            return;
+        const nuevoEstado = Number(btnSeleccion.dataset.estado);
+        const titulo = btnSeleccion.dataset.titulo;
+        if (!titulo || !nuevoEstado)
+            return;
+        // Actualizar tarea en localStorage
+        actualizarTarea(titulo, undefined, undefined, nuevoEstado);
+        // Re-renderizar dashboard
+        renderizarTareas();
+    });
+}
 // Inicialización cuando el DOM está listo
 document.addEventListener("DOMContentLoaded", () => {
     const usuariActual = localStorage.getItem("usuariActual");
@@ -368,6 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Página principal (Dashboard)
     if (isMainPage) {
         renderizarTareas();
+        inicializarMenuEstado();
+        inicializarCambioEstado();
     }
     // Página de todas las tareas
     if (isAllTasksPage) {
